@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { useQuery } from 'react-apollo'
+import { useQuery } from '@apollo/client'
 import gql from 'graphql-tag'
 function App() {
   const { loading } = useQuery(gql`

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 
 test('renders learn react link', () => {
   const { getByText } = render(<MockedProvider mock={{}}><App /></MockedProvider>);
