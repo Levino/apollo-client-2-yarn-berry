@@ -1,10 +1,27 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import {act, render} from '@testing-library/react';
+import App, {QUERY} from './App';
 import { MockedProvider } from '@apollo/react-testing'
+import wait from 'waait'
+const mocks = [{
+  request: {
+    query: QUERY
+  },
+  result: {
+    data: {
+      user: {
+        firstName: "Levino",
+        lastName: "Levino"
+      }
+    }
+  }
+}]
 
-test('renders learn react link', () => {
-  const { getByText } = render(<MockedProvider mock={{}}><App /></MockedProvider>);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders learn react link', async () => {
+  const { getByText } = render(<MockedProvider mocks={mocks} addTypename={false}><App /></MockedProvider>);
+  await act(async () => {
+    await wait(0)
+  })
+  const userName = getByText(/Levino/i);
+  expect(userName).toBeInTheDocument();
 });

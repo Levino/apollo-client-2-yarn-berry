@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
-    "@apollo/react-testing": "^3"
+    "@apollo/react-testing": "^3",
+    "waait": "^1.0.5"
   }
 }
