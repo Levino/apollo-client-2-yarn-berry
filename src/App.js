@@ -3,23 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag'
-function App() {
-  const { loading } = useQuery(gql`
+
+export const QUERY = gql`
   {
-    user(id: 5) {
+    user {
       firstName
       lastName
     }
   }
-`)
+`
+function App() {
+  const { loading, data } = useQuery(QUERY)
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        {!loading &&
+        {loading ?
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+         loading
+        </p> : <p>First name: {data.user.firstName}</p>
         }
         <a
           className="App-link"
