@@ -13,7 +13,7 @@ export const QUERY = gql`
   }
 `
 function App() {
-  const { loading, data, error} = useQuery(QUERY)
+  const { loading, data } = useQuery(QUERY)
   return (
     <div className="App">
       <header className="App-header">
