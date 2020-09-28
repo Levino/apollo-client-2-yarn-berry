@@ -1,7 +1,7 @@
 import React from 'react';
 import {act, render} from '@testing-library/react';
 import App, {QUERY} from './App';
-import { MockedProvider } from '@apollo/react-testing'
+import { MockedProvider } from '@apollo/client/testing'
 import wait from 'waait'
 const mocks = [{
   request: {
