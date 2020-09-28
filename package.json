@@ -37,6 +37,6 @@
     ]
   },
   "devDependencies": {
-    "@apollo/react-testing": "^4.0.0"
+    "@apollo/react-testing": "^3"
   }
 }
